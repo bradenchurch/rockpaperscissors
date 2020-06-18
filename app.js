@@ -12,7 +12,7 @@
 
 playerInput = (userInput) =>{
   userInput = userInput.toLowerCase();
-  if (userInput === 'rock' || userInput==='paper' || userInput ==='scissors') {
+  if (userInput === 'rock' || userInput==='paper' || userInput ==='scissor') {
     return userInput;
   } else {
     console.log('Try Again');
@@ -26,11 +26,11 @@ function computerInput() {
     break;
 
     case 1:
-    return 'paper' ;
+    return 'scissor';
     break;
 
     case 2:
-    return 'scissor';
+    return 'paper';
     break;
     
   };
@@ -40,21 +40,21 @@ function winnerLoser(playerInput, computerInput) {
   debugger
   if (playerInput === computerInput) {
     return "It\'s a Tie!"
-  } else if  (playerInput === 'rock') {
+  } else if (playerInput === 'rock') {
     if (computerInput === 'paper') {
-      return "Computer Wins" ;
+      return "Computer Wins";
     } else { 
-     return 'You Win' ;
+     return 'You Win';
     }
   } else if (playerInput === 'paper') {
     if (computerInput === 'scissor') {
-      return "Computer Wins" ;
+      return "Computer Wins";
     } else {
       return "You Win" ;
     }
   } else if (playerInput === 'scissor') {
     if (computerInput === 'rock') {
-      return "Computer Wins" ;
+      return "Computer Wins";
     } else {
       return 'You Win';
     }
@@ -62,12 +62,18 @@ function winnerLoser(playerInput, computerInput) {
 };
 
 function playGame() {
+  var playerChoice=playerInput(document.getElementById('input1').value);
   // computerInput()
-  console.log(`You chose ${playerInput(document.getElementById('input1').value)}`)
+  // var playerInput = playerInput();
+  // var computerInput = computerInput()
+
+  console.log(`You chose ${playerChoice}`)
   console.log(`Computer chose ${computerInput(document.write)}`)
-  console.log(`Drumroll... ${winnerLoser(document.write.value)}`)
+  console.log(`Drumroll... ${winnerLoser(playerChoice, computerInput())}`)
 }
 
-
+// console.log(`You chose ${playerChoice}`)
+// console.log(`Computer chose ${computerInput}`)
+// console.log(`Drumroll... ${winnerLoser(playerChoice, computerInput())}`)
 
 // after looking at the debugger, both the playerInput and the computerInput are being returned as 'undefined' in like 39 of the winnerLoser function. Need to figure out how to get it to pull from the above inputs.
