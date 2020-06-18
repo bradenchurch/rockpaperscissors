@@ -8,11 +8,14 @@
 // Computer choice
 // process
 // display screen
-
+// couldn't get the game to consistently put out the right winnerLoser. Not sure why.
+const playerDisplay = document.getElementById("playerDisplay")
+const computerDisplay = document.getElementById("computerDisplay")
+const winnerDisplay = document.getElementById("winnerDisplay")
 
 playerInput = (userInput) =>{
   userInput = userInput.toLowerCase();
-  if (userInput === 'rock' || userInput==='paper' || userInput ==='scissor') {
+  if (userInput === 'rock', playerDisplay.innerHTML = "You Chose Rock!" || userInput==='paper', playerDisplay.innerHTML = "You chose Paper!" || userInput ==='scissors', playerDisplay.innerHTML = "You chose Scissors!" ) {
     return userInput;
   } else {
     console.log('Try Again');
@@ -32,12 +35,11 @@ function computerInput() {
     case 2:
     return 'paper';
     break;
-    
+    computerDisplay.innerHTML = "Computer Chooses: "
   };
 }
 
 function winnerLoser(playerInput, computerInput) {
-  debugger
   if (playerInput === computerInput) {
     return "It\'s a Tie!"
   } else if (playerInput === 'rock') {
