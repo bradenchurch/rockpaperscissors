@@ -13,6 +13,7 @@ const playerDisplay = document.getElementById("playerDisplay")
 const computerDisplay = document.getElementById("computerDisplay")
 const winnerDisplay = document.getElementById("winnerDisplay")
 
+// would get stuck on one selection couldn't quite figure it out.
 playerInput = (userInput) =>{
   userInput = userInput.toLowerCase();
   if (userInput === 'rock', playerDisplay.innerHTML = "You Chose Rock!" || userInput==='paper', playerDisplay.innerHTML = "You chose Paper!" || userInput ==='scissors', playerDisplay.innerHTML = "You chose Scissors!" ) {
@@ -38,7 +39,7 @@ function computerInput() {
     computerDisplay.innerHTML = "Computer Chooses: "
   };
 }
-
+// some issues here with the selection of the game, it was working before I added a way for it to print the selections to HTML
 function winnerLoser(playerInput, computerInput) {
   if (playerInput === computerInput) {
     return "It\'s a Tie!"
